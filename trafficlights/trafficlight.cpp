@@ -1,9 +1,9 @@
 #include "trafficlight.h"
 
-trafficlight::trafficlight(int x)
+trafficlight::trafficlight(int x, int vert, int horiz)
 {
-    trafficlight::horiz_state = 0; // 0 red, 1 amber, 2 green
-    trafficlight::vert_state = 1;
+    trafficlight::horiz_state = vert; // 0 red, 1 amber, 2 green
+    trafficlight::vert_state = horiz;
     lightPosition = tileLocations[x].location;
     positionD = lightPosition+PointF(10,-20);
     positionU = lightPosition+PointF(-10,20);

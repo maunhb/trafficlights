@@ -5,15 +5,16 @@
 class trafficlight
 {
 private:
+
+public:
+    trafficlight(int x, int vert, int horiz);
+    int horiz_state;
+    int vert_state;
     PointF positionL;
     PointF positionU;
     PointF positionR;
     PointF positionD;
     PointF lightPosition;
-public:
-    trafficlight(int x);
-    int horiz_state;
-    int vert_state;
 
     int getHorizState(){return horiz_state;}
     int getVertState(){return vert_state;}

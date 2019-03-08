@@ -15,18 +15,24 @@ class car
     bool stopped;
     qreal mass;
     qreal max_speed;
+    int spacing;
     PointF Position;
     PointF Destination;
+    bool horiz_close, vert_close;
+    bool wait;
+    qreal waitingTime;
     int positionNode, nextNode, destinationNode;
-  //  QVector<trafficlight*>* lightVector;
 
 public:
     car(int positionNode, int destinationNode, QColor color = QColor::fromRgb(255,0,0,125));
     virtual ~car();
  //   car(int positionNode, int destinationNode, pathfinder *paths, QColor color = QColor::fromRgb(255,0,0,125));
 
-    virtual void computeNextState(QVector<car*> *cars);
+    virtual void computeNextState(QVector<car*> *cars, QVector<trafficlight*> *lights);
+    virtual void closeTrafficLight(QVector<trafficlight*> *lights);
+    virtual void closeCar(QVector<car*> *cars);
     void Drive();
+    void Ini();
 
     PointF getPosition() {return Position;}
     PointF getDestination() {return Destination;}

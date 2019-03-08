@@ -34,7 +34,9 @@ SOURCES += \
     worldpainter.cpp \
     trafficlight.cpp \
     initialise.cpp \
-    unittest.cpp
+    unittest.cpp \
+    stats.cpp \
+    smartlight.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -46,7 +48,9 @@ HEADERS += \
     worldpainter.h \
     trafficlight.h \
     initialise.h \
-    unittest.h
+    unittest.h \
+    stats.h \
+    smartlight.h
 
 FORMS += \
         mainwindow.ui

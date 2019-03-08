@@ -10,7 +10,9 @@ int inline sgn(qreal x)
 car::car(int startNode, int destinationNode, QColor color)
 {
     car::Position = nodeLocations[startNode].location;
+ //   qDebug() << Position;
     car::Destination = nodeLocations[destinationNode].location;
+ //   qDebug() << Destination ;
     car::positionNode = startNode;
     car::destinationNode = destinationNode;
     car::color = color;
@@ -18,16 +20,16 @@ car::car(int startNode, int destinationNode, QColor color)
  //   nextNode = paths->astar(positionNode,destinationNode);
  // nextNode = paths->dijkstras(positionNode,destinationNode);
 
-    // initialise traffic lights
+/*    // initialise traffic lights
     lightVector = new QVector<trafficlight*>();
-    lightVector->push_back(new trafficlight(4));
+    lightVector->push_back(new trafficlight(4)); */
 }
 
 void car::computeNextState(QVector<car *> *cars)
  {
     Q_UNUSED(cars);
    // Q_UNUSED(paths);
-
+/*
     PointF tempDestination = nodeLocations[nextNode].location;
 
     // if sufficiently close to destination then update waypoint destination
@@ -36,7 +38,7 @@ void car::computeNextState(QVector<car *> *cars)
      //  nextNode = paths->dijkstras(positionNode, destinationNode);
     //   nextNode = paths->astar(positionNode, destinationNode);
         tempDestination = nodeLocations[nextNode].location;
-    }
+    } */
  }
 
  void car::Drive(){
@@ -56,6 +58,10 @@ void car::computeNextState(QVector<car *> *cars)
      PointF v = PointF(x/sq,y/sq);
      // }
      Position += v;
+
+ /*    qDebug() << x;
+     qDebug() << y;
+     qDebug()<< sq ; */
  }
 
 car::~car(){

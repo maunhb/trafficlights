@@ -7,11 +7,12 @@ QPointF WorldSize()
     return QPointF(450,450);
 }
 
-/*void car::Ini()
+void car::Ini()
 {
     // initialise constants
     mass = 60;
-}*/
+    spacing = 7;
+}
 
 int RenderingTimeDelay()
 {
@@ -24,7 +25,7 @@ void InitialiseWorld(World* world, QVector<car*>* carsVector, QVector<trafficlig
     Q_UNUSED(world);
     carsVector->push_back(new car(0,5));
     carsVector->push_back(new car(3,8));
-    lightVector->push_back(new trafficlight(4));
+    lightVector->push_back(new trafficlight(4,0,2));
 
 }
 

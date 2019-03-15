@@ -19,11 +19,11 @@ class car
     PointF Position;
     PointF Destination;
     bool horiz_close, vert_close;
-    bool wait;
     qreal waitingTime;
     int positionNode, nextNode, destinationNode;
 
 public:
+    bool wait;
     car(int positionNode, int destinationNode, QColor color = QColor::fromRgb(255,0,0,125));
     virtual ~car();
  //   car(int positionNode, int destinationNode, pathfinder *paths, QColor color = QColor::fromRgb(255,0,0,125));

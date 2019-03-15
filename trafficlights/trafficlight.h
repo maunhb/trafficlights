@@ -22,6 +22,8 @@ public:
     QPoint getR(){return QPoint(positionR.x(),positionR.y());}
     QPoint getD(){return QPoint(positionD.x(),positionD.y());}
     QPoint getU(){return QPoint(positionU.x(),positionU.y());}
+
+    // put people waiting for ULDR here?
 };
 
 #endif // TRAFFICLIGHT_H

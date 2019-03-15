@@ -41,7 +41,7 @@ void WorldPainter::repaint(World *world, map *worldMap)
         }
         if(worldMap->tiles[i].vert == 1){
             left = -15 + tileLocations[i].location.x();
-            top = -75 + tileLocations[i].location.y();
+            top = 375 - tileLocations[i].location.y();
             width = 30;
             height = 150;
             QRect drawRoad(left,top,width,height);

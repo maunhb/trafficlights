@@ -26,10 +26,15 @@ void World::computeIteration(double dTime){
     }
     Q_UNUSED(dTime);
     // let cars calculate moves
-    for(int i = 0; i < carsVector->size() ; i++)
-        carsVector->at(i)->computeNextState(carsVector);
-    for(int i = 0; i < carsVector->size() ; i++)
+    for(int i = 0; i < carsVector->size() ; i++){
+        carsVector->at(i)->closeTrafficLight(lightVector);
+        carsVector->at(i)->closeCar(carsVector);
+        carsVector->at(i)->computeNextState(carsVector, lightVector);
+
+    }
+    for(int i = 0; i < carsVector->size() ; i++){
         carsVector->at(i)->Drive();
+    }
     // randomly generate cars
     carspace += 1;
     if(carspace%4 == 0){
@@ -47,5 +52,13 @@ void World::computeIteration(double dTime){
         else if(r>0.95){
             carsVector->push_back(new car(6,11));
         }
+        num_waiting = 0;
+        for(int i=0; i<carsVector->size(); i++){
+            if(carsVector->at(i)->wait == 1){
+                num_waiting +=1;
+            }
+        }
+        qDebug() << "waiting" ;
+        qDebug() << num_waiting;
     }
 }

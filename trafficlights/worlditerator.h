@@ -5,6 +5,7 @@
 #include <QObject>
 #include "qdebug.h"
 #include "worldpainter.h"
+#include"smartlight.h"
 //#include<QApplication>
 
 class WorldIterator : public QTimer
@@ -15,6 +16,8 @@ class WorldIterator : public QTimer
     map* worldMap;
     double time;
     int timerTickDelayMsec;
+    smartlight* changeLights;
+    QVector<stats*>* statVector;
 public:
     WorldIterator(World* mainWorld, WorldPainter* worldPainter, map *worldMap);
 public slots:

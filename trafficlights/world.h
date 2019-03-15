@@ -7,11 +7,6 @@
 
 class World
 {
-    QPointF size;
-    QVector<car*>* carsVector;
-    QVector<trafficlight*>* lightVector;
-  //  pathfinder* paths;
-
 public:
     double maxX; // 500
     double maxY; // 500
@@ -19,7 +14,13 @@ public:
     void computeIteration(double dTime);
     int carspace;
 
+    QPointF size;
+    QVector<car*>* carsVector;
+    QVector<trafficlight*>* lightVector;
+  //  pathfinder* paths;
+
     const QVector<car*>* getCars() {return carsVector;}
     const QVector<trafficlight*>* getLights() {return lightVector;}
+    int num_waiting;
 };
 #endif // WORLD_H

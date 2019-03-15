@@ -5,9 +5,9 @@
 class smartlight
 {
 public:
-    smartlight(stats* stat);
-    void change_lights_vert(QVector<trafficlight*>* lightVector);
-    void change_lights_horiz(QVector<trafficlight*>* lightVector);
+    smartlight();
+    void change_lights_vert(QVector<trafficlight*>* lightVector, QVector<stats*>* statVector);
+    void change_lights_horiz(QVector<trafficlight*>* lightVector, QVector<stats*>* statVector);
 };
 
 #endif // SMARTLIGHT_H
